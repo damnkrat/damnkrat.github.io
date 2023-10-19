@@ -1,5 +1,6 @@
 from pyscript import window, document
 
+
 def init():
     messageIE = "This plugin is not supported by IE"
     messageIncognito = "This plugin does not work in the browser's incognito mode. Please switch to normal mode."
@@ -12,20 +13,24 @@ def init():
     else:
         showFrame()
 
+
 def createMessage(message):
     document.getElementById("iframe").style.display = "none"
     divMessage = document.getElementById("div_message")
     divMessage.style.display = "flex"
-    divMessage.innerHTML = "<p id='message' style='text-align:center; font-size:12pt;'>" + message + "</p>"
+    divMessage.innerHTML = f"<p id='message' style='text-align:center; font-size:12pt;'>{message}</p>"
     divMessage.style.display = "block"
+
 
 def showFrame():
     frame = document.getElementById("iframe")
     frame.src = "https://evgeny-nadymov.github.io/telegram-react/"
     frame.style.display = "block"
 
+
 def button(id):
     window.Asc.plugin.executeCommand("close", "")
+
 
 def onTranslate():
     elem = document.getElementById("message")
