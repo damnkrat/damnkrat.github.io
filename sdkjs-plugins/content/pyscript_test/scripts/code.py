@@ -1,4 +1,9 @@
-from pyscript import window, document
+import html
+
+import js
+
+document = js.document
+window = js.window
 
 
 def init():
